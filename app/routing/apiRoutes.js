@@ -66,7 +66,9 @@ module.exports = function(app) {
             var bestMatches = getClosest.number(0, compatArr); // calculates best match(es) by gathering 
             console.log(compatArr[bestMatches] + " this is the winning score");
             //
-            retrieveMatch(compatArr[bestMatches]);
+            var uID = retrieveMatch(compatArr[bestMatches]);
+
+            return uID;// returns uid of winning match
 
 
         }
@@ -79,20 +81,27 @@ module.exports = function(app) {
 
                 if (friends[i].compatScore === lowestCompatScore) {
                     console.log("this is a potential match " + friends[i].name);
-                    matches.push(friends[i].uID); // adds UID of all matches with the lowest score to array
+                    // matches.push(friends[i].uID); // adds UID of all matches with the lowest score to array
+                    matches.push(friends[i]); 
                 }
 
             }
             // if more than one match have the same score pick random
             // pick random winner and return uID
             var match = matches[Math.floor(Math.random() * matches.length)];
-            console.log("This UID is the winner " + match)
-            return match;
+            console.log("This UID is the winner " + match.uID)
+            return match; // return winning object
         }
 
         // res.json(logic.findMatch(surveyResults));
-         res.json(findMatch(surveyResults));
-        
+         // res.json(findMatch(surveyResults));
+
+        var bestMatch = findMatch(surveyResults);
+        // console.log("this is the best match " + JSON.stringify(bestMatch));
+
+      
+     
+        res.json(bestMatch);
 
 
     });
