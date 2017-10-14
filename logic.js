@@ -1,8 +1,8 @@
 var friends = require('./app/data/friends.js');
-var uuidv1 = require('uuid/v1');
+// var uuidv1 = require('uuid/v1');
 var getClosest = require("get-closest");
 
-console.log("test loaded");
+console.log("logic loaded");
 
 //calculate winner
 compareScore = function(arr1, arr2) {
