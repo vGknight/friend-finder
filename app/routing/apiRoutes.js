@@ -3,7 +3,9 @@ console.log('apiroutes loaded');
 var friends = require('../data/friends.js');
 var uuidv1 = require('uuid/v1');
 // var getClosest = require("get-closest");
-var logic = require('../../logic.js')
+var logic = require('../../logic.js');
+var validate = require('express-validation');
+var validation = require('../../validation.js'); // validation rules
 
 
 module.exports = function(app) {
@@ -15,7 +17,29 @@ module.exports = function(app) {
 
     });
 
-    app.post('/api/friends', function(req, res) {
+    // app.post('/api/friends', function(req, res) {
+
+    //     var surveyResults = req.body;
+
+    //     //logic to determine best match
+    //     console.log(surveyResults);
+    //     uid = uuidv1(); // generate uID
+    //     surveyResults['uID'] = uid; // add uID to object
+    //     console.log(surveyResults);
+
+    //     var bestMatch = logic.mostCompatible(surveyResults);
+    //     // console.log("this is the best match " + JSON.stringify(bestMatch));
+
+
+
+    //     res.json(bestMatch);
+
+
+    // });
+
+    // testing validate
+
+      app.post('/api/friends', validate(validation), function(req, res) {
 
         var surveyResults = req.body;
 
@@ -28,12 +52,13 @@ module.exports = function(app) {
         var bestMatch = logic.mostCompatible(surveyResults);
         // console.log("this is the best match " + JSON.stringify(bestMatch));
 
-      
-     
+
+
         res.json(bestMatch);
 
 
     });
+
 
 
 
