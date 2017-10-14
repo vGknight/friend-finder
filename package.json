@@ -1,0 +1,31 @@
+{
+  "name": "friend-finder",
+  "version": "1.0.0",
+  "description": "Homework",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vGknight/friend-finder.git"
+  },
+  "keywords": [
+    "Node.js",
+    "Express"
+  ],
+  "author": "Greg Knight",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vGknight/friend-finder/issues"
+  },
+  "homepage": "https://github.com/vGknight/friend-finder#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "get-closest": "0.0.4",
+    "path": "^0.12.7",
+    "uuid": "^3.1.0"
+  }
+}
