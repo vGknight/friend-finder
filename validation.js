@@ -1,17 +1,11 @@
 var Joi = require('joi');
 
-// module.exports = {
-//   body: {
-//     email: Joi.string().email().required(),
-//     password: Joi.string().regex(/[a-zA-Z0-9]{3,30}/).required()
-//   }
-// };
-
+//validate posts to /api/friends contains required properties
 module.exports = {
-  body: {
-    name: Joi.string().required(),
-    photo: Joi.string().required(),
-    scores: Joi.array().required()
+    body: {
+        name: Joi.string().required(),
+        photo: Joi.string().required(),
+        scores: Joi.array().required()
 
-  }
+    }
 };

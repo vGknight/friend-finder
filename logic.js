@@ -1,5 +1,4 @@
 var friends = require('./app/data/friends.js');
-// var uuidv1 = require('uuid/v1');
 var getClosest = require("get-closest");
 
 console.log("logic loaded");
@@ -20,7 +19,7 @@ compareScore = function(arr1, arr2) {
     return sum;
 }
 
-// // finds best match for submitted
+// // returns unique ID of single best match
 mostCompatible = function(lonelyPerson) {
 
     myScores = lonelyPerson.scores;
@@ -43,17 +42,17 @@ mostCompatible = function(lonelyPerson) {
         }
 
     }
-    var bestMatches = getClosest.number(0, compatArr); // calculates best match(es) by gathering 
+    var bestMatches = getClosest.number(0, compatArr); // determines lowest number (most compatible matche(s))
     console.log(compatArr[bestMatches] + " this is the winning score");
     //
-    var uID = retrieveMatch(compatArr[bestMatches]);
+    var finalMatch = retrieveMatch(compatArr[bestMatches]); // returns best match, 
 
-    return uID; // returns uid of winning match
+    return finalMatch; // winning match!
 
 
 }
 
-// //returns best match or picks random match if more than one match has the same compatibility
+// returns best match or picks random match if more than one match has the same compatibility, we need this if there are more than one matches with the same compat score
 retrieveMatch = function(lowestCompatScore) {
 
     matches = [];
@@ -69,7 +68,6 @@ retrieveMatch = function(lowestCompatScore) {
     // if more than one match have the same score
     // pick random winner and return match
     var match = matches[Math.floor(Math.random() * matches.length)];
-    // console.log("This UID is the winner " + match.uID)
 
     return match; // return winning object
 }
