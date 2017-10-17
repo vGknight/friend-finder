@@ -1,7 +1,6 @@
 var friends = require('./app/data/friends.js');
-var getClosest = require("get-closest");
+var getClosest = require('get-closest');
 
-console.log("logic loaded");
 
 //calculate winner
 compareScore = function(arr1, arr2) {
@@ -38,12 +37,12 @@ mostCompatible = function(lonelyPerson) {
 
 
         } else {
-            console.log("skipping self..");
+            console.log('skipping self..');
         }
 
     }
     var bestMatches = getClosest.number(0, compatArr); // determines lowest number (most compatible matche(s))
-    console.log(compatArr[bestMatches] + " this is the winning score");
+    console.log(compatArr[bestMatches] + ' this is the winning score');
     //
     var finalMatch = retrieveMatch(compatArr[bestMatches]); // returns best match, 
 
@@ -59,7 +58,7 @@ retrieveMatch = function(lowestCompatScore) {
     for (var i = 0; i < friends.length; i++) {
 
         if (friends[i].compatScore === lowestCompatScore) {
-            console.log("this is a potential match " + friends[i].name);
+            console.log('this is a potential match ' + friends[i].name);
             // matches.push(friends[i].uID); // adds UID of all matches with the lowest score to array
             matches.push(friends[i]);
         }

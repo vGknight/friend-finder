@@ -1,5 +1,3 @@
-console.log('apiroutes loaded');
-
 var friends = require('../data/friends.js');
 var uuidv1 = require('uuid/v1');
 var logic = require('../../logic.js');

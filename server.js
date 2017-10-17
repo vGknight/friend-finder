@@ -1,8 +1,8 @@
 // Dependencies
 // =============================================================
-var express = require("express");
-var bodyParser = require("body-parser");
-var path = require("path");
+var express = require('express');
+var bodyParser = require('body-parser');
+var path = require('path');
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -23,3 +23,4 @@ require('./app/routing/htmlRoutes.js')(app);
 app.listen(PORT, function() {
     console.log(`our app is running on port ${ PORT }`);
 });
+

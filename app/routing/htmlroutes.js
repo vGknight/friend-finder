@@ -1,6 +1,4 @@
-console.log('htmlroutes loaded');
 var path = require('path');
-//test
 
 module.exports = function(app) {
 
